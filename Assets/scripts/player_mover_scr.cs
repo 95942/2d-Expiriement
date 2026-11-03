@@ -1,24 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class player_mover_scr : MonoBehaviour
 
 {
-    private float moveSpeed = 3f;
+    public float moveInput = 3f;
     void start()
     {
 
     }
     void update()
     {
-if (Input.GetKey(KeyCode.A))
-        {
-            transform.position = transform.position += transform.right * -moveSpeed * Time.deltaTime;
-        }
+         if (Mouse.current.leftButton.isPressed)  {
+            Debug.Log("test");
+      }
 
-if (Input.GetKey(KeyCode.D))
-        { 
-            transform.position = transform.position += transform.right * moveSpeed * Time.deltaTime;
-        }
-
-    }
+if (Keyboard.current.wKey.isPressed){ 
+ Debug.Log("test");
+}
+}
 }
